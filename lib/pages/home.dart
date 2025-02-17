@@ -35,6 +35,12 @@ class _HomeState extends State<Home> {
     Navigator.of(context).pop();
   }
 
+  void _onDelete(int index) {
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +59,7 @@ class _HomeState extends State<Home> {
           itemCount: todoList.length,
           itemBuilder: (context, index) => TodoTile(
             todo: todoList[index],
+            onDelete: (_) => _onDelete(index),
           ),
         ),
       ),
