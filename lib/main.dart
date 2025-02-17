@@ -4,7 +4,7 @@ import 'package:hive_ce/hive.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 
 void main(List<String> args) async {
-  final box = await Hive.openBox('mybox');
+  Hive.init('mybox');
   runApp(Main());
 }
 
