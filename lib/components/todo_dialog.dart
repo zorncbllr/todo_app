@@ -3,12 +3,14 @@ import 'package:todo_app/models/todo.dart';
 
 class TodoDialog extends StatefulWidget {
   TextEditingController controller;
-  VoidCallback createTodo;
+  VoidCallback onSubmit;
+  VoidCallback onCancel;
 
   TodoDialog({
     super.key,
     required this.controller,
-    required this.createTodo,
+    required this.onSubmit,
+    required this.onCancel,
   });
 
   @override
@@ -30,7 +32,7 @@ class _TodoDialogState extends State<TodoDialog> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: widget.onCancel,
                 icon: Icon(Icons.cancel_outlined),
               )
             ],
@@ -48,7 +50,7 @@ class _TodoDialogState extends State<TodoDialog> {
             ),
           ),
           TextButton(
-            onPressed: widget.createTodo,
+            onPressed: widget.onSubmit,
             child: Text('Create'),
           )
         ],

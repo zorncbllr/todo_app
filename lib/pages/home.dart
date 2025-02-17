@@ -30,6 +30,11 @@ class _HomeState extends State<Home> {
     });
   }
 
+  void _onCancel(BuildContext context) {
+    _controller.clear();
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +65,8 @@ class _HomeState extends State<Home> {
             builder: (context) => Dialog(
               child: TodoDialog(
                 controller: _controller,
-                createTodo: () => _createTodo(context),
+                onSubmit: () => _createTodo(context),
+                onCancel: () => _onCancel(context),
               ),
             ),
           );
