@@ -1,4 +1,6 @@
-class Todo {
+import 'package:hive_ce/hive.dart';
+
+class Todo extends HiveObject {
   String task;
   bool status;
 
