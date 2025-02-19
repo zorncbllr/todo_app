@@ -20,17 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    if (_todoBox.isEmpty) {
-      todoList = [
-        Todo(task: 'Learn flutter development.', status: false),
-        Todo(task: 'Learn database normalization', status: false),
-        Todo(task: 'Integrate hive local database.', status: false),
-      ];
-      _todoBox.addAll(todoList);
-    } else {
-      todoList = _todoBox.values.toList();
-    }
-
+    todoList = _todoBox.values.toList();
     super.initState();
   }
 
